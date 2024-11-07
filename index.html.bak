@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <style>
+	#protectedContent {
+		display: none; /* hide
+	}
+
     /* Remove default margin and padding */
     body, html {
         margin: 0;
