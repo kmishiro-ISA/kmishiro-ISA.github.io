@@ -49,7 +49,7 @@
     <a href="interactive.html" onclick="handleClick(event)">Interactive Maps</a>
 </header>
 
-<iframe src="<iframe src="https://storymaps.arcgis.com/stories/ee53d868cdb641b284f0edb87b03c893?header" width="100%" height="500px" frameborder="0" allowfullscreen allow="geolocation"></iframe>"></iframe>
+<iframe src="https://storymaps.arcgis.com/stories/ee53d868cdb641b284f0edb87b03c893?header" width="100%" height="500px" frameborder="0" allowfullscreen allow="geolocation"></iframe>
 
 <script>
     // Keep track of the currently clicked link
