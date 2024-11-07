@@ -4,7 +4,7 @@
     <script type="text/javascript">
         function checkPasswordAndRedirect() {
             var password = prompt("Internal Page for ISA Secretariat - please enter the password:");
-            if (password === "yourpassword") {
+            if (password === "I$ASec") {
                 window.location.href = "https://kmishiro-ISA.github.io/main.html"; // Redirect URL for correct password
             } else {
                 alert("Incorrect password. Access denied.");
