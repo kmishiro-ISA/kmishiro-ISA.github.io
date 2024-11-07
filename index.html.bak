@@ -23,13 +23,12 @@
             var password = prompt("Internal Page for ISA Secretariat - please enter the password:");
             if (password !== "I$ASec") {
                 alert("Incorrect password. Access denied.");
-                window.location.href = "https://github.com";  // Redirect on wrong password
+                window.location.href = "https://www.isa.org.jm/";  // Redirect on wrong password
             }
         }
     </script>
 </head>
 <body onload="checkPassword()">
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<iframe src="https://isa-gis.maps.arcgis.com/apps/webappviewer/index.html?id=2ac9493858a24d1d9e5f6c95a44ba186&extent=-135.1675,49.246,-119.6834,56.8563"></iframe>
 </body>
 </html>
