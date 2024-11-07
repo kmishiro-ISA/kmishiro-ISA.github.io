@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header with Dynamic Click Effect</title>
+    <title>Interactive Maps</title>
     <style>
         /* Basic styling for the header */
         header {
@@ -46,7 +46,7 @@
 <header>
     <a href="status_exp.html" onclick="handleClick(event)">Status of Exploration Areas</a>
     <a href="status_res.html" onclick="handleClick(event)">Status of Reserved Areas</a>
-    <a href="interactive.html" onclick="handleClick(event)">Interactive Maps</a>
+    <a href="interactive.html" style="text-decoration: underline;" onclick="handleClick(event)">Interactive Maps</a>
 </header>
 
 <iframe src="https://isa-gis.maps.arcgis.com/apps/webappviewer/index.html?id=2ac9493858a24d1d9e5f6c95a44ba186&extent=-135.1675,49.246,-119.6834,56.8563"></iframe>
