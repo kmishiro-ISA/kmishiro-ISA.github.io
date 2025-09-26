@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ISA GIS Data Viewer</title>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.30/esri/themes/light/main.css">
+  <script src="https://js.arcgis.com/4.30/"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      background-color: #003366;   /* dark blue */
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+    header img {
+      height: 50px;   /* adjust size of logo */
+    }
+    #description {
+      padding: 10px 20px;
+      background-color: #f4f4f4;
+      border-bottom: 1px solid #ccc;
+    }
+    #viewDiv {
+      height: calc(100vh - 140px); /* full screen minus header + description height */
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with Logo -->
+  <header>
+	
+	<img height="548" src="https://www.isa.org.jm/wp-content/uploads/2022/03/ISA_logo_white.png.webp" class="custom-logo" alt="" decoding="async" fetchpriority="high" srcset="https://www.isa.org.jm/wp-content/uploads/2022/03/ISA_logo_white.png.webp 546w, https://www.isa.org.jm/wp-content/uploads/2022/03/ISA_logo_white-300x300.png.webp 300w, https://www.isa.org.jm/wp-content/uploads/2022/03/ISA_logo_white-150x150.png.webp 150w" sizes="(max-width: 546px) 100vw, 546px">
+	
+    <h1>ISA GIS Map Data Viewer</h1>
+  </header>
+
+  <!-- Description -->
+  <div id="description">
+    <p>
+      This map is for <strong>ISA Secretariat</strong> use only.  
+      Please log in with your assigned Viewer account to access the content.  
+    </p>
+  </div>
+
+  <!-- Map -->
+  <div id="viewDiv"></div>
+
+  <script>
+    require([
+      "esri/identity/IdentityManager",
+      "esri/WebMap",
+      "esri/views/MapView"
+    ], function(IdentityManager, WebMap, MapView) {
+
+      const portalUrl = "https://isa-gis.maps.arcgis.com/sharing"; // use /sharing for login
+
+      // Force login check
+      IdentityManager.checkSignInStatus(portalUrl).catch(() => {
+        IdentityManager.getCredential(portalUrl);
+      });
+
+      // WebMap
+      const webmap = new WebMap({
+        portalItem: {
+          id: "adaefa85735a4d619e4dcaba30d16d7a",  // your WebMap ID
+          portal: { url: "https://isa-gis.maps.arcgis.com" }
+        }
+      });
+
+      // View
+      const view = new MapView({
+        container: "viewDiv",
+        map: webmap
+      });
+    });
+  </script>
+</body>
+</html>

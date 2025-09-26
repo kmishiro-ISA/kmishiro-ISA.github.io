@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ISA GIS Dashboard Viewer</title>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.30/esri/themes/light/main.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      background-color: #003366;   /* dark blue */
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+    header img {
+      height: 50px;
+    }
+    #description {
+      padding: 10px 20px;
+      background-color: #f4f4f4;
+      border-bottom: 1px solid #ccc;
+    }
+    #dashboardDiv {
+      height: calc(100vh - 140px); /* full screen minus header + description */
+      width: 100%;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with Logo -->
+  <header>
+    <img src="https://www.isa.org.jm/wp-content/uploads/2022/03/ISA_logo_white.png.webp" 
+         alt="ISA Logo">
+    <h1>ISA GIS Dashboard Viewer</h1>
+  </header>
+
+  <!-- Description -->
+  <div id="description">
+    <p>
+      This dashboard is for <strong>ISA Secretariat</strong> use only.  
+      Please log in with your assigned Viewer account to access the content. Historical information on past activities can be accessed here:  
+      <a href="https://storymaps.arcgis.com/stories/ee53d868cdb641b284f0edb87b03c893" target="_blank">
+        ISA GIS StroyMap
+      </a>. 
+    </p>
+  </div>
+
+  <!-- Dashboard Embed -->
+  <div id="dashboardDiv">
+    <iframe 
+      src="https://isa-gis.maps.arcgis.com/apps/dashboards/e29dae3714834f50934747c497f5242f"
+      allowfullscreen>
+    </iframe>
+  </div>
+</body>
+</html>
